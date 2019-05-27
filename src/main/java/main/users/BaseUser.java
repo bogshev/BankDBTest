@@ -1,9 +1,9 @@
-package main.Users;
+package main.users;
 
 public class BaseUser implements User {
     private String id = "";
     private String position = "";
-    int money = 500;
+    private int balance;
 
     public BaseUser(String id) {
         setId(id);
@@ -43,18 +43,26 @@ public class BaseUser implements User {
 
     ////////////////
 
-    public void balance() {
-        System.out.println(money + " dollars");
+    public void balance(){
+        System.out.println(balance);
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
     }
 
     ////////////////
 
     public void sendMoney(int amount) {
-        money = money - amount;
+        balance = balance - amount;
     }
 
     public void gainMoney(int amount) {
-        money = money + amount;
+        balance = balance + amount;
     }
 
 }

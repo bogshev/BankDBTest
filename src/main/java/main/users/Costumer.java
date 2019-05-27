@@ -1,4 +1,4 @@
-package main.Users;
+package main.users;
 
 public class Costumer extends BaseUser {
 
@@ -6,6 +6,13 @@ public class Costumer extends BaseUser {
     public Costumer(String id) {
         super(id);
         position();
+        setBalance(0);
+    }
+
+    public Costumer(String id, int balance) {
+        super(id);
+        position();
+        setBalance(balance);
     }
 
     public void iD() {

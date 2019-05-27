@@ -2,7 +2,7 @@ package main.DBManager.AddingUsers;
 
 import main.DBManager.ConnectionToDB;
 
-public class AddUser {
+public class DBAddUser {
 
 
     public static void addingUser(String id, int balance, String position) {
@@ -10,11 +10,11 @@ public class AddUser {
         ConnectionToDB.connect();
 
         if (position == "Manager") {
-            AddManager.addingManager(id, balance, position);
+            DBAddManager.addingManager(id, balance, position);
         } else if (position == "Employer") {
-            AddEmployer.addingEmployer(id, balance, position);
+            DBAddEmployer.addingEmployer(id, balance, position);
         } else if (position == "Costumer") {
-            AddCostumer.addingCostumer(id, balance, position);
+            DBAddCostumer.addingCostumer(id, balance, position);
         }
 
     }

@@ -9,7 +9,7 @@ public class DelUser {
     public static void deletingUser(String id) {
 
         try (Statement statement = ConnectionToDB.connection.createStatement()) {
-            statement.execute("delete from users where id = " + id);
+            statement.execute("DELETE FROM users WHERE id = " + id);
 
         } catch (SQLException e) {
             e.printStackTrace();

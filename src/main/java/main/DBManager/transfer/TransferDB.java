@@ -1,16 +1,15 @@
-package main.DBManager.DeletingUsers;
+package main.DBManager.transfer;
 
 import main.DBManager.ConnectionToDB;
 
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class DelAll {
+public class TransferDB {
 
-    public static void deletingAnnihilation() {
-        ConnectionToDB.connect();
+    public static void action(String id, int balance){
         try (Statement statement = ConnectionToDB.connection.createStatement()) {
-            statement.execute("DELETE FROM users");
+            statement.execute("UPDATE users SET balance = '" + balance + "' WHERE id = '" + id + "'");
 
         } catch (SQLException e) {
             e.printStackTrace();

@@ -1,4 +1,4 @@
-package main.Users;
+package main.users;
 
 
 public interface User {
@@ -9,6 +9,10 @@ public interface User {
     void setId(String id);
 
     void balance();
+
+    int getBalance();
+
+    void setBalance(int balance);
 
     void position();
 
