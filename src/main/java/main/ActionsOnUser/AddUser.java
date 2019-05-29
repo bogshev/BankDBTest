@@ -14,7 +14,7 @@ public class AddUser {
         adding(addId, balance, position);
     }
 
-    public static void adding(String addId, int balance, int job){
+    public static void adding(String addId, int balance, int job) {
 
         if (job == 1) {
             DBAddUser.addingUser(addId, balance, "Manager");

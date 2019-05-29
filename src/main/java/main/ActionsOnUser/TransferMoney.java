@@ -1,16 +1,12 @@
 package main.ActionsOnUser;
 
 import main.Actions.Transfer;
-import main.DBManager.ConnectionToDB;
-import main.DBManager.transfer.TransferDB;
 import main.users.User;
 import main.util.ScanUtil;
 
-import java.sql.ResultSet;
+
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class TransferMoney {
     public static void transfer() throws SQLException {

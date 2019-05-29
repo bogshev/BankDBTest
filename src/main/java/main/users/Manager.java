@@ -1,6 +1,5 @@
 package main.users;
 
-
 public class Manager extends BaseUser {
 
 

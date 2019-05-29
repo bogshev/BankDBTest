@@ -5,8 +5,8 @@ import main.Actions.HeatingUp;
 import main.ActionsOnUser.Delete;
 import main.ActionsOnUser.UsersRepository;
 import main.ActionsOnUser.TransferMoney;
-
 import main.DBManager.ConnectionToDB;
+import main.DBManager.DeletingUsers.DelAll;
 import main.util.ScanUtil;
 
 import java.sql.SQLException;
@@ -21,7 +21,12 @@ public class Main {
         HeatingUp.action(n);
         ConnectionToDB.connect();
         do {
-            String question1 = "Write down action: \n1.Add User \n2.Delete \n3.Transfer  \n4.Show all users";
+            String question1 =
+                    "Write down action: " +
+                            "\n1.Add User " +
+                            "\n2.Delete " +
+                            "\n3.Transfer  " +
+                            "\n4.Show all users";
             int action = Integer.parseInt(scanner.scan(question1));
             switch (action) {
                 case 1:
@@ -37,6 +42,7 @@ public class Main {
                     UsersRepository.getUsers();
                     break;
             }
-        } while (scanner.confirm(""));
+        } while (scanner.confirm("End process"));
+        DelAll.deletingAnnihilation();
     }
 }

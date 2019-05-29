@@ -43,7 +43,7 @@ public class BaseUser implements User {
 
     ////////////////
 
-    public void balance(){
+    public void balance() {
         System.out.println(balance);
     }
 

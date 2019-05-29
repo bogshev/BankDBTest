@@ -1,18 +1,11 @@
 package main.Actions;
 
 import main.DBManager.AddingUsers.DBAddUser;
-import main.users.User;
-
-import java.util.HashSet;
 
 public class HeatingUp {
-    private HashSet<User> eList;
-    public HeatingUp(HashSet<User> list){
-        eList = list;
-    }
 
-    public static void action(int n){
-        for(int i = 1; i<=2; i++){
+    public static void action(int n) {
+        for (int i = 1; i <= 2; i++) {
             DBAddUser.addingUser(randomId(n), 500, "Manager");
             DBAddUser.addingUser(randomId(n), 500, "Employer");
             DBAddUser.addingUser(randomId(n), 500, "Costumer");
@@ -25,13 +18,14 @@ public class HeatingUp {
 //            System.out.println(stringBuffer);
         }
     }
-    private static String randomId(int n){
+
+    private static String randomId(int n) {
         String id = "0123456789";
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i<n;i++){
-            int index = (int) (id.length()*Math.random());
+        for (int i = 0; i < n; i++) {
+            int index = (int) (id.length() * Math.random());
             sb.append(id.charAt(index));
         }
-         return sb.toString();
+        return sb.toString();
     }
 }

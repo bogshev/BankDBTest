@@ -1,7 +1,6 @@
 package main.util;
 
-import java.io.BufferedReader;
-import java.io.IOException;
+
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
@@ -13,11 +12,10 @@ public class ScanUtil {
         return scanner.next();
 
     }
+
     public static boolean confirm(String message) {
-        message += "\nContinue? Y/N";
+        message += "\nConfirm? Y/N";
         return scan(message).toLowerCase().contains("y");
     }
-//    public static void print(String message) {
-//        System.out.println(message);
-//    }
+
 }

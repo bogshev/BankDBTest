@@ -14,13 +14,12 @@ public class UsersRepository {
 
     public static List getUsers() throws SQLException {
         List<User> users = new ArrayList<>();
-        try{
+        try {
             Statement statement = ConnectionToDB.connection.createStatement();
             ResultSet rs = statement.executeQuery("SELECT * FROM users");
-            while (rs.next())
-            {
+            while (rs.next()) {
                 //User user = null;
-                switch(rs.getString(3)){
+                switch (rs.getString(3)) {
                     case "Costumer":
                         users.add(new Manager(rs.getString(1), rs.getInt(2)));
                     case "Employer":
@@ -36,7 +35,7 @@ public class UsersRepository {
                 //System.out.println(user.getPosition()+user.getId());
                 System.out.println(rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3));
             }
-        }catch(SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return users;
